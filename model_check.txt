@@ -24,3 +24,52 @@ Associative Entity for Student-Course: Enrollment
 One-to-One Relationship: NOT REQUIRED
 
 Visual Diagram Created in MySQL Workbench: YES
+┌──────────────────────┐
+                    │     DEPARTMENT       │
+                    ├──────────────────────┤
+                    │ PK DepartmentID      │
+                    │    DepartmentName    │
+                    └──────────┬───────────┘
+                               │
+                         1     │     M
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │       STUDENT        │
+                    ├──────────────────────┤
+                    │ PK StudentID         │
+                    │    StudentName       │
+                    │ FK DepartmentID      │
+                    └──────────┬───────────┘
+                               │
+                         M     │     M
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │      ENROLLMENT      │
+                    ├──────────────────────┤
+                    │ PK EnrollmentID      │
+                    │ FK StudentID         │
+                    │ FK CourseID          │
+                    └──────────┬───────────┘
+                               │
+                         M     │     1
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │       COURSE         │
+                    ├──────────────────────┤
+                    │ PK CourseID          │
+                    │    CourseName        │
+                    │ FK FacultyID         │
+                    └──────────┬───────────┘
+                               │
+                         M     │     1
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │       FACULTY        │
+                    ├──────────────────────┤
+                    │ PK FacultyID         │
+                    │    FacultyName       │
+                    └──────────────────────
